@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 class Contact{
     private:
         std::string first_name;
@@ -17,19 +18,24 @@ class Contact{
             phone_number = c;
             darkest_secret = d;
         }
+        std::string getfirst_name() const { return first_name; }
+        std::string getlast_name() const { return last_name; }
+        std::string getnickname() const { return nickname; }
         void viewlist(){
-            std::cout << first_name << 
-            last_name <<
-            nickname <<
-            phone_number <<
-            darkest_secret  << std:: endl;
+            std::cout <<"first_name :" <<first_name << std:: endl <<
+            "last_name :"<< last_name << std:: endl <<
+            "nickname :" << nickname << std::endl <<
+            "phone_number :"<< phone_number << std::endl <<
+            "darkest_secret :" << darkest_secret  << std:: endl;
         }
 };
+
 class PhoneBook{
     private:
         Contact contacts[8];
     public:
         PhoneBook(){};
+        Contact getcontact(int index) const { return contacts[index]; }
         void addcantact(Contact s,int &index)
         {
             if(index >= 8)
@@ -38,13 +44,12 @@ class PhoneBook{
                 contacts[index] = s;
             index++;
         }
-        void cat()
+        void print(const std::string& str) 
         {
-            int i = 0;
-            while(i<8)
-            {
-                std::cout << i << "  ";
-                contacts[i++].viewlist();
+            if (str.length() > 10) {
+                std::cout << str.substr(0, 9) << ".";
+            } else {
+                str.length() < 10 ? std::cout << std::string(10 - str.length(), ' ') << str : std::cout << str;
             }
         }
 };
@@ -64,7 +69,7 @@ std::string checkdigit(std::string line) {
     while (true) {
         // Check if empty
         if (line.empty()) {
-            std::cout << "Input cannot be empty. Please try again.";
+            std::cout << "Input cannot be empty. Please try again." << std::endl;
             std::getline(std::cin, line);
             continue;
         }
@@ -95,6 +100,14 @@ Contact func(){
     Contact new_contact(a,aa,b,c,d);
     return new_contact;
 }
+int str_to_int(const std::string& str) {
+    std::istringstream iss(str);
+    int num;
+    iss >> num;
+    if (!iss.fail() && iss.eof())
+        return num;
+    return -1;
+}
 int main(){
     std::string adam = "";
     PhoneBook contact;
@@ -110,7 +123,27 @@ int main(){
         }
         else if(adam == "SEARCH")
         {
-            
+            for(int i = 0; i < index && i < 8; i++)
+            {
+                std::cout<<  "     Index|First Name| Last Name|  Nickname" << std::endl;
+                std::cout << "----------|----------|----------|----------" << std::endl;
+                std::cout << "       " <<i  << " | ";
+                contact.print(contact.getcontact(i).getfirst_name());
+                std::cout << " | ";
+                contact.print(contact.getcontact(i).getlast_name());
+                std::cout << " | ";
+                contact.print(contact.getcontact(i).getnickname());
+                std::cout << std::endl;
+            }
+            std::cout << "Enter a index to view details :" << std::endl;
+            std::cin >> adam;
+            std::cin.ignore();
+            int num = str_to_int(adam);
+            if(num >= 0 && num < index && num < 8)
+                contact.getcontact(num).viewlist();
+            else
+                std::cout << "Invalid index" << std::endl;
+
         }
         else if(adam == "EXIT")
         {
