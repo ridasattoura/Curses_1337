@@ -3,22 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: risattou <risattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ader <ader@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 14:34:05 by risattou          #+#    #+#             */
-/*   Updated: 2025/10/12 14:39:49 by risattou         ###   ########.fr       */
+/*   Updated: 2025/10/12 16:00:42 by ader             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-Constact::Contact(std::string a,std::string aa,std::string b,std::string c,std::string d)
+Contact Contact::create(std::string a, std::string aa, std::string b,
+                     std::string c, std::string d)
 {
-    first_name = a;
-    last_name = aa;
-    nickname = b;
-    phone_number = c;
-    darkest_secret = d;
+    Contact new_contact;
+    new_contact.first_name = a;
+    new_contact.last_name = aa;
+    new_contact.nickname = b;
+    new_contact.phone_number = c;
+    new_contact.darkest_secret = d;
+    return new_contact;
 }
+    
+
 
 void Contact::viewlist()
 {

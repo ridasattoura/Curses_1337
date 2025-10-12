@@ -3,67 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: risattou <risattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ader <ader@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 14:40:39 by risattou          #+#    #+#             */
-/*   Updated: 2025/10/12 14:40:49 by risattou         ###   ########.fr       */
+/*   Updated: 2025/10/12 16:18:21 by ader             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include "PhoneBook.hpp"
+#include <iostream>
 
-class Contact{
-    private:
-        std::string first_name;
-        std::string last_name;
-        std::string nickname;
-        std::string phone_number;
-        std::string darkest_secret;
-    public:
-        Contact() {}
-        Contact(std::string a,std::string aa,std::string b,std::string c,std::string d)
-        {
-            first_name = a;
-            last_name = aa;
-            nickname = b;
-            phone_number = c;
-            darkest_secret = d;
-        }
-        std::string getfirst_name() const { return first_name; }
-        std::string getlast_name() const { return last_name; }
-        std::string getnickname() const { return nickname; }
-        void viewlist(){
-            std::cout <<"first_name :" <<first_name << std:: endl <<
-            "last_name :"<< last_name << std:: endl <<
-            "nickname :" << nickname << std::endl <<
-            "phone_number :"<< phone_number << std::endl <<
-            "darkest_secret :" << darkest_secret  << std:: endl;
-        }
-};
-
-class PhoneBook{
-    private:
-        Contact contacts[8];
-    public:
-        PhoneBook(){};
-        Contact getcontact(int index) const { return contacts[index]; }
-        void addcantact(Contact s,int &index)
-        {
-            if(index >= 8)
-                contacts[index%8] = s;
-            else
-                contacts[index] = s;
-            index++;
-        }
-        void print(const std::string& str) 
-        {
-            if (str.length() > 10) {
-                std::cout << str.substr(0, 9) << ".";
-            } else {
-                str.length() < 10 ? std::cout << std::string(10 - str.length(), ' ') << str : std::cout << str;
-            }
-        }
-};
 
 std::string get_nonempty_input(std::string value) {
     std::string input;
@@ -76,11 +26,16 @@ std::string get_nonempty_input(std::string value) {
     }
     return input;
 }
-std::string checkdigit(std::string line) {
+std::string checkdigit(std::string prompt) {
+    std::string line;
+    std::cout << prompt;
+    std::getline(std::cin, line);
+    
     while (true) {
         // Check if empty
         if (line.empty()) {
             std::cout << "Input cannot be empty. Please try again." << std::endl;
+            std::cout << prompt;
             std::getline(std::cin, line);
             continue;
         }
@@ -96,7 +51,8 @@ std::string checkdigit(std::string line) {
             // Valid input
             return line;
         } else {
-            std::cout << "phone number: ";
+            std::cout << "Invalid input. Please enter digits only." << std::endl;
+            std::cout << prompt;
             std::getline(std::cin, line);
         }
     }
@@ -108,7 +64,7 @@ Contact func(){
     b = get_nonempty_input( "nickname: ");
     c = checkdigit("phone number: ");
     d = get_nonempty_input("darkest secret: ");
-    Contact new_contact(a,aa,b,c,d);
+    Contact new_contact = Contact::create(a, aa, b, c, d);
     return new_contact;
 }
 int str_to_int(const std::string& str) {
@@ -130,23 +86,24 @@ int main(){
         std::cin.ignore();
         if(adam == "ADD")
         {
-            contact.addcantact(func(),index);
+            contact.addcontact(func(),index);
         }
         else if(adam == "SEARCH")
         {
+            std::cout<<  "     Index|First Name| Last Name|  Nickname|" << std::endl;
+            std::cout << "----------|----------|----------|----------|" << std::endl;
             for(int i = 0; i < index && i < 8; i++)
             {
-                std::cout<<  "     Index|First Name| Last Name|  Nickname" << std::endl;
-                std::cout << "----------|----------|----------|----------" << std::endl;
-                std::cout << "       " <<i  << " | ";
+                std::cout << "         " <<i  << "|";
                 contact.print(contact.getcontact(i).getfirst_name());
-                std::cout << " | ";
+                std::cout << "|";
                 contact.print(contact.getcontact(i).getlast_name());
-                std::cout << " | ";
+                std::cout << "|";
                 contact.print(contact.getcontact(i).getnickname());
+                std::cout << "|";
                 std::cout << std::endl;
             }
-            std::cout << "Enter a index to view details :" << std::endl;
+            std::cout << "Enter a index (between 0 and 7) to view details :" << std::endl;
             std::cin >> adam;
             std::cin.ignore();
             int num = str_to_int(adam);
