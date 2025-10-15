@@ -6,13 +6,19 @@
 /*   By: risattou <risattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:51:38 by risattou          #+#    #+#             */
-/*   Updated: 2025/10/15 23:59:52 by risattou         ###   ########.fr       */
+/*   Updated: 2025/10/16 00:17:33 by risattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
+int	Account::_nbAccounts = 0;
+int	Account::_totalAmount = 0;
+int	Account::_totalNbDeposits = 0;
+int	Account::_totalNbWithdrawals = 0;
+    
 int	Account::getNbAccounts( void ) 
 {
     return _nbAccounts;
@@ -43,22 +49,22 @@ void	Account::displayAccountsInfos( void )
 };
 Account::Account( int initial_deposit )
 {
-		_displayTimestamp();
-		_accountIndex = _nbAccounts;
-		_amount = initial_deposit;
-		_nbDeposits = 0;
-		_nbWithdrawals = 0;
-		_nbAccounts++;
-		_totalAmount += _amount;
-		std::cout << "index:" << _accountIndex <<
-		";amount:"<< _amount << ";created" << std::endl;
+    _displayTimestamp();
+    _accountIndex = _nbAccounts;
+    _amount = initial_deposit;
+    _nbDeposits = 0;
+    _nbWithdrawals = 0;
+    _nbAccounts++;
+    _totalAmount += _amount;
+    std::cout << "index:" << _accountIndex <<
+    ";amount:"<< _amount << ";created" << std::endl;
 };
 
 Account::~Account( void )
 {
-        _displayTimestamp();
-        std::cout << "index:" << _accountIndex <<
-        ";amount:"<< _amount << ";closed" << std::endl;
+    _displayTimestamp();
+    std::cout << "index:" << _accountIndex <<
+    ";amount:"<< _amount << ";closed" << std::endl;
 };
 
 
@@ -98,9 +104,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 }
 int		Account::checkAmount( void ) const
 {
-    _displayTimestamp();
-    std::cout << "[Cp:" << this->_accountIndex << ";" << std::endl;
-    return 10;
+        return _amount;
 }
 void	Account::displayStatus( void ) const
 {
@@ -110,4 +114,20 @@ void	Account::displayStatus( void ) const
     ";deposits:" << _nbDeposits <<
     ";withdrawals:" << _nbWithdrawals << std::endl;
 
+};
+
+void	Account::_displayTimestamp( void ){
+    std::time_t		now = std::time(0);
+    std::tm*		tm = std::localtime(&now);
+    std::cout << '[' << tm->tm_year + 1900  ;
+    tm->tm_mon >= 9 ? std::cout << tm->tm_mon + 1 : std::cout << '0' << tm->tm_mday + 1;
+    tm->tm_mday >= 10 ? std::cout << tm->tm_mday : std::cout << '0' << tm->tm_mday;
+    std::cout << '_';
+    tm->tm_hour >= 10 ? std::cout << tm->tm_hour : std::cout << '0' << tm->tm_hour;
+    tm->tm_min >= 10 ? std::cout << tm->tm_min : std::cout << '0' << tm->tm_min;
+    tm->tm_sec >= 10 ? std::cout << tm->tm_sec : std::cout << '0' << tm->tm_sec;
+    std::cout << "] ";
+};
+Account::Account( void )
+{
 };
