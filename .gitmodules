@@ -28,3 +28,6 @@
 [submodule "Pool-1337"]
 	path = Pool/Pool-1337
 	url = https://github.com/ridasattoura/Pool-1337.git
+[submodule "Circle_02/So_long"]
+	path = Circle_02/So_long
+	url = https://github.com/ridasattoura/So_long.git
