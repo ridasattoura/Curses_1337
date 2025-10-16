@@ -31,3 +31,6 @@
 [submodule "Circle_02/So_long"]
 	path = Circle_02/So_long
 	url = https://github.com/ridasattoura/So_long.git
+[submodule "Circle_04/Cpp-Module-01"]
+	path = Circle_04/Cpp-Module-01
+	url = https://github.com/ridasattoura/Cpp-Module-01.git
