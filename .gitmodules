@@ -19,3 +19,9 @@
 [submodule "Circle_03/Philosophers"]
 	path = Circle_03/Philosophers
 	url = git@github.com:ridasattoura/Philosophers.git
+[submodule "Circle_04/miniRT"]
+	path = Circle_04/miniRT
+	url = git@github.com:amn700/miniRT.git
+[submodule "Circle_04/Cpp-Module-00"]
+	path = Circle_04/Cpp-Module-00
+	url = git@github.com:ridasattoura/Cpp-Module-00.git
