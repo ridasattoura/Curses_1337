@@ -16,3 +16,9 @@
 [submodule "pipex"]
 	path = pipex
 	url = git@github.com:ridasattoura/pipex.git
+[submodule "so_long"]
+	path = so_long
+	url = git@github.com:ridasattoura/so_long.git
+[submodule "push_swap"]
+	path = push_swap
+	url = git@github.com:ridasattoura/push_swap.git
