@@ -25,3 +25,6 @@
 [submodule "Circle_04/Cpp-Module-00"]
 	path = Circle_04/Cpp-Module-00
 	url = git@github.com:ridasattoura/Cpp-Module-00.git
+[submodule "Pool-1337"]
+	path = Pool-1337
+	url = https://github.com/ridasattoura/Pool-1337.git
