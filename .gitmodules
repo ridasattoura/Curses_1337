@@ -1,0 +1,21 @@
+[submodule "Circle_00/libft"]
+	path = Circle_00/libft
+	url = git@github.com:ridasattoura/libft.git
+[submodule "Circle_01/ft_printf"]
+	path = Circle_01/ft_printf
+	url = git@github.com:ridasattoura/ft_printf.git
+[submodule "Circle_01/get_next_line"]
+	path = Circle_01/get_next_line
+	url = git@github.com:ridasattoura/get_next_line.git
+[submodule "Circle_02/push_swap"]
+	path = Circle_02/push_swap
+	url = git@github.com:ridasattoura/push_swap.git
+[submodule "Circle_02/pipex"]
+	path = Circle_02/pipex
+	url = git@github.com:ridasattoura/pipex.git
+[submodule "Circle_03/minishell"]
+	path = Circle_03/minishell
+	url = git@github.com:amn700/minishell.git
+[submodule "Circle_03/Philosophers"]
+	path = Circle_03/Philosophers
+	url = git@github.com:ridasattoura/Philosophers.git
