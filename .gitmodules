@@ -1,27 +1,33 @@
-[submodule "Philosophers"]
-	path = Philosophers
-	url = git@github.com:ridasattoura/Philosophers.git
-[submodule "minishell"]
-	path = minishell
-	url = git@github.com:amn700/minishell.git
-[submodule "ft_printf"]
-	path = ft_printf
-	url = git@github.com:ridasattoura/ft_printf.git
-[submodule "libft"]
-	path = libft
+[submodule "Circle_00/libft"]
+	path = Circle_00/libft
 	url = git@github.com:ridasattoura/libft.git
-[submodule "get_next_line"]
-	path = get_next_line
+[submodule "Circle_01/ft_printf"]
+	path = Circle_01/ft_printf
+	url = git@github.com:ridasattoura/ft_printf.git
+[submodule "Circle_01/get_next_line"]
+	path = Circle_01/get_next_line
 	url = git@github.com:ridasattoura/get_next_line.git
-[submodule "pipex"]
-	path = pipex
+[submodule "Circle_02/pipex"]
+	path = Circle_02/pipex
 	url = git@github.com:ridasattoura/pipex.git
-[submodule "so_long"]
-	path = so_long
+[submodule "Circle_02/so_long"]
+	path = Circle_02/so_long
 	url = git@github.com:ridasattoura/so_long.git
-[submodule "push_swap"]
-	path = push_swap
+[submodule "Circle_02/push_swap"]
+	path = Circle_02/push_swap
 	url = git@github.com:ridasattoura/push_swap.git
+[submodule "Circle_03/Philosophers"]
+	path = Circle_03/Philosophers
+	url = git@github.com:ridasattoura/Philosophers.git
+[submodule "Circle_03/minishell"]
+	path = Circle_03/minishell
+	url = git@github.com:amn700/minishell.git
+[submodule "Circle_04/Cpp-Module-00"]
+	path = Circle_04/Cpp-Module-00
+	url = git@github.com:ridasattoura/Cpp-Module-00.git
+[submodule "Circle_04/miniRT"]
+	path = Circle_04/miniRT
+	url = git@github.com:amn700/miniRT.git
 [submodule "POOL"]
 	path = POOL
 	url = git@github.com:ridasattoura/POOL.git
