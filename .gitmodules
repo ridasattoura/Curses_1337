@@ -22,3 +22,6 @@
 [submodule "push_swap"]
 	path = push_swap
 	url = git@github.com:ridasattoura/push_swap.git
+[submodule "POOL"]
+	path = POOL
+	url = git@github.com:ridasattoura/POOL.git
