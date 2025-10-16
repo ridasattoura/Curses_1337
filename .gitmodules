@@ -1,0 +1,18 @@
+[submodule "Philosophers"]
+	path = Philosophers
+	url = git@github.com:ridasattoura/Philosophers.git
+[submodule "minishell"]
+	path = minishell
+	url = git@github.com:amn700/minishell.git
+[submodule "ft_printf"]
+	path = ft_printf
+	url = git@github.com:ridasattoura/ft_printf.git
+[submodule "libft"]
+	path = libft
+	url = git@github.com:ridasattoura/libft.git
+[submodule "get_next_line"]
+	path = get_next_line
+	url = git@github.com:ridasattoura/get_next_line.git
+[submodule "pipex"]
+	path = pipex
+	url = git@github.com:ridasattoura/pipex.git
