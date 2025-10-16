@@ -19,7 +19,8 @@ void PhoneBook::addcontact(Contact s,int &index)
 void PhoneBook::print(const std::string& str) 
 {
     if (str.length() > 10) {
-        std::cout << str.substr(0, 9) << ".";
+        std::cout   << str.substr(0, 9) 
+                    << ".";
     } else {
         str.length() < 10 ? std::cout << std::string(10 - str.length(), ' ') << str : std::cout << str;
     }

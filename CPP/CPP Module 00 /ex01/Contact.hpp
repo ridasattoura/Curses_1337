@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ader <ader@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: risattou <risattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 14:30:53 by risattou          #+#    #+#             */
-/*   Updated: 2025/10/12 16:03:52 by ader             ###   ########.fr       */
+/*   Updated: 2025/10/16 00:30:11 by risattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ class Contact{
         std::string phone_number;
         std::string darkest_secret;
     public:
-    static Contact create(std::string a, std::string aa, std::string b,
+    Contact(std::string a, std::string aa, std::string b,
         std::string c, std::string d);
+    Contact();
     std::string getfirst_name();
     std::string getlast_name();
     std::string getnickname();
