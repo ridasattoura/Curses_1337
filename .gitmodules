@@ -7,7 +7,7 @@
 [submodule "Circle_01/get_next_line"]
 	path = Circle_01/get_next_line
 	url = git@github.com:ridasattoura/get_next_line.git
-[submodule "Circle_02/push_swap"]
+[submodule "Circle_03/push_swap"]
 	path = Circle_02/push_swap
 	url = git@github.com:ridasattoura/push_swap.git
 [submodule "Circle_02/pipex"]
@@ -34,3 +34,9 @@
 [submodule "Circle_04/Cpp-Module-01"]
 	path = Circle_04/Cpp-Module-01
 	url = https://github.com/ridasattoura/Cpp-Module-01.git
+[submodule "Circle_04/Cpp-Module-02"]
+	path = Circle_04/Cpp-Module-02
+	url = https://github.com/ridasattoura/Cpp-Module-02.git
+[submodule "Circle_04/Cpp-Module-03"]
+	path = Circle_04/Cpp-Module-03
+	url = https://github.com/ridasattoura/Cpp-Module-03.git
