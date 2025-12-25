@@ -40,3 +40,9 @@
 [submodule "Circle_04/Cpp-Module-03"]
 	path = Circle_04/Cpp-Module-03
 	url = https://github.com/ridasattoura/Cpp-Module-03.git
+[submodule "Circle_04/Cpp-Module-04"]
+	path = Circle_04/Cpp-Module-04
+	url = https://github.com/ridasattoura/Cpp-Module-04.git
+[submodule "Circle_04/NetPractice"]
+	path = Circle_04/NetPractice
+	url = git@github.com:ridasattoura/NetPractice.git
